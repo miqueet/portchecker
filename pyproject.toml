@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "portchecker"
+description = "Check whether TCP ports are open on one or more hosts"
+readme = "README.md"
+requires-python = ">=3.9"
+dynamic = ["version"]
+
+[project.scripts]
+portopen = "portopen:main"
+
+[tool.setuptools]
+py-modules = ["portopen"]
+
+[tool.setuptools.dynamic]
+version = { attr = "portopen.__version__" }
